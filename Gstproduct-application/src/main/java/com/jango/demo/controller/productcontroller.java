@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +22,6 @@ public class productcontroller {
 	@Autowired
 	private productdao dao;
 	
-	@CrossOrigin(origins="http://localhost:4200")
 	@RequestMapping(method=RequestMethod.POST,value="/pdt")
 	 public String newproduct(@RequestBody product pro)
 	 {
@@ -31,21 +29,18 @@ public class productcontroller {
 		 return "product stored";
 	 }
 	 
-	@CrossOrigin(origins="http://localhost:4200")
 	@GetMapping("/pdt")
 	public List<product> getProducts()
 	 {
 		 return (List<product>) dao.findAll();
 	 }
 	 
-	@CrossOrigin(origins="http://localhost:4200")
 	 @GetMapping("/pdt/{id}")
 	 public Optional<product> getonep(@PathVariable int id)
 	 {
 		 return(dao.findById(id));
 	 }
 	 
-	 @CrossOrigin(origins="http://localhost:4200")
 	 @PutMapping("/pdt")
 	 public String updateproduct(@RequestBody product pro)
 	 {
@@ -53,7 +48,6 @@ public class productcontroller {
 		 return "product updated";
 	 }
 	 
-	 @CrossOrigin(origins="http://localhost:4200")
 	 @DeleteMapping("/pdt/{id}")
 	 public String deleteproduct(@PathVariable int id)
 	 {
