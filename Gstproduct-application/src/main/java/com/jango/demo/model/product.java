@@ -13,16 +13,6 @@ public class product {
 	private int product_quantity=1;
 	private int product_gross;
 
-	public product(int product_code, String product_name, int product_price, int product_gst, int product_quantity,
-			int product_gross) {
-		super();
-		this.product_code = product_code;
-		this.product_name = product_name;
-		this.product_price = product_price;
-		this.product_gst = product_gst;
-		this.product_quantity = product_quantity;
-		this.product_gross = product_gross;
-	}
 	public product() {
 		super();
 	}
